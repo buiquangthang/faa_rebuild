@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :course_categories
     resources :users
     resources :newses
+    resources :registration_courses
   end
 
   namespace :admin do

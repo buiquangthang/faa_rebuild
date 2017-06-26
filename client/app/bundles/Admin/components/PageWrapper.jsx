@@ -12,7 +12,6 @@ import NewsCategoryNew from './news_categories/NewsCategoryNew';
 import CourseCategoriesList from './course_categories/CourseCategoriesList';
 import EditCourseCategory from './course_categories/EditCourseCategory';
 import NewCourseCategory from './course_categories/NewCourseCategory';
-
 import UserList from './users/UserList';
 import EditUser from './users/EditUser';
 import NewUser from './users/NewUser';
@@ -21,6 +20,7 @@ import FeedbacksList from './feedbacks/FeedbacksList';
 import NewsList from './newses/NewsList';
 import EditNews from './newses/EditNews';
 import NewNews from './newses/NewNews';
+import RegistrationCourseIndex from './registration_courses/RegistrationCourseIndex';
 import {Route, Switch} from 'react-router-dom';
 
 export default class PageWrapper extends React.Component {
@@ -53,6 +53,7 @@ export default class PageWrapper extends React.Component {
             <Route exact path="/admin/newses/:id/edit" component={EditNews}/>
             <Route exact path="/admin/newses/new" component={NewNews}/>
             <Route exact path="/admin" component={CourseList}/>
+            <Route exact path="/admin/registration_courses" component={RegistrationCourseIndex}/>
           </Switch>
         </div>
       </div>

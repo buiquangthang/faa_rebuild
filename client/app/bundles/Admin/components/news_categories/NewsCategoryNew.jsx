@@ -8,7 +8,7 @@ import Errors from '../Errors'
 
 const csrfToken = ReactOnRails.authenticityToken();
 
-class NewCertification extends React.Component {
+class NewsCategoryNew extends React.Component {
   constructor(props, _railsContext) {
     super(props);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -103,4 +103,4 @@ class NewCertification extends React.Component {
   }
 }
 
-export default injectIntl(NewCertification);
+export default injectIntl(NewsCategoryNew);

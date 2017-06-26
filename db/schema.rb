@@ -73,6 +73,21 @@ ActiveRecord::Schema.define(version: 20170627024449) do
     t.index ["course_category_id"], name: "index_courses_on_course_category_id", using: :btree
   end
 
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer  "priority",   default: 0, null: false
+    t.integer  "attempts",   default: 0, null: false
+    t.text     "handler",                null: false
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
+  end
+
   create_table "feedbacks", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -116,8 +131,9 @@ ActiveRecord::Schema.define(version: 20170627024449) do
     t.string   "phone"
     t.text     "address"
     t.integer  "course_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "status",     default: 0
     t.index ["course_id"], name: "index_registrations_on_course_id", using: :btree
   end
 

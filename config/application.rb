@@ -15,5 +15,6 @@ module FaaRebuild
       "*.{rb,yml}")]
     config.i18n.default_locale = :vi
     config.autoload_paths += Dir["#{config.root}/app/view_objects/**/"]
+    config.active_job.queue_adapter = :delayed_job
   end
 end
